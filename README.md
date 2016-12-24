@@ -4,7 +4,8 @@
 
 Provide an easy to read `serviceWorker.js` that does the following:
 
-- [x] Cache a set of files.
+- [x] Cache a specific set of files.
+- [x] Cache files not included in the `serviceWorker.js` file.
 - [x] Update cached files on page load.
 - [x] Clear out old cache.
 - [x] Return cached files when offline or server is unavailable.
