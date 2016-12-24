@@ -42,9 +42,15 @@ self.addEventListener('fetch', event => {
         caches.match(event.request)
             .then(response => {
 
+                if (response) {
+
+                    return response;
+
+                }
+
                 caches.open(cacheVersion).then(cache => cache.add(event.request.url));
 
-                return response || fetch(event.request);
+                return fetch(event.request);
 
             })
     );
