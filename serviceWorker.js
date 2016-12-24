@@ -3,7 +3,7 @@ const cacheVersion = `${cacheName}::1.0.0`;
 
 const cachedFiles = [
     '/',
-    '/styles.css'
+    '/css/styles.css'
 ];
 
 self.addEventListener('install', event => {
