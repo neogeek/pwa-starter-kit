@@ -17,7 +17,7 @@
 
 <main>
 
-    <p>Oh hey.</p>
+    <p>Oh hey. You are <span class="connectivity-status">online</span>.</p>
 
 </main>
 
@@ -32,6 +32,18 @@ if ('serviceWorker' in navigator) {
     );
 
 }
+
+window.addEventListener('online', function () {
+
+    document.querySelector('.connectivity-status').innerText = 'online';
+
+})
+
+window.addEventListener('offline', function () {
+
+    document.querySelector('.connectivity-status').innerText = 'offline';
+
+});
 
 </script>
 
