@@ -8,6 +8,8 @@ const cachedFiles = [
 
 self.addEventListener('install', event => {
 
+    console.log('[pwa install]');
+
     event.waitUntil(
         caches.open(cacheVersion)
             .then(cache => cache.addAll(cachedFiles))
@@ -16,6 +18,8 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
+
+    console.log('[pwa activate]');
 
     event.waitUntil(
         caches.keys().then(keys =>
@@ -31,6 +35,8 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+
+    console.log('[pwa fetch]', event.request.url);
 
     event.respondWith(
         caches.match(event.request)
