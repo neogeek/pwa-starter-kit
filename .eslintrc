@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "@neogeek/eslint-config-standards"
+  ],
+  "rules": {
+    "no-shadow": 0
+  }
+}
