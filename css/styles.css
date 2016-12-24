@@ -28,3 +28,7 @@ ol, ul {
 a {
     color: inherit;
 }
+
+.connectivity-status {
+    font-weight: 600;
+}
