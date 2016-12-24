@@ -3,6 +3,7 @@
     "@neogeek/eslint-config-standards"
   ],
   "rules": {
+    "no-console": 0,
     "no-shadow": 0
   }
 }
