@@ -10,5 +10,6 @@
     ],
     "start_url": "https://pwa-starter-kit-93cf2.firebaseapp.com/",
     "background_color": "#FFFFFF",
-    "theme_color": "#3E82F7"
+    "theme_color": "#3E82F7",
+    "display": "browser"
 }
