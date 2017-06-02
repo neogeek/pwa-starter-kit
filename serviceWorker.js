@@ -6,6 +6,9 @@ const cachedFiles = [
     '/css/styles.css'
 ];
 
+const networkFiles = [
+];
+
 self.addEventListener('install', event => {
 
     console.log('[pwa install]');
@@ -36,17 +39,30 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
 
-    console.log('[pwa fetch]', event.request.url);
+    if (networkFiles.filter(item => event.request.url.match(item)).length) {
 
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => {
+        console.log('[network fetch]', event.request.url);
 
-                caches.open(cacheVersion).then(cache => cache.add(event.request.url));
+        event.respondWith(
+            caches.match(event.request)
+                .then(response => response || fetch(event.request))
+        );
 
-                return response || fetch(event.request);
+    } else {
 
-            })
-    );
+        console.log('[pwa fetch]', event.request.url);
+
+        event.respondWith(
+            caches.match(event.request)
+                .then(response => {
+
+                    caches.open(cacheVersion).then(cache => cache.add(event.request.url));
+
+                    return response || fetch(event.request);
+
+                })
+        );
+
+    }
 
 });
