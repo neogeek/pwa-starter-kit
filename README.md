@@ -1,5 +1,7 @@
 # Progressive Web Application Starter Kit
 
+[![](https://img.shields.io/badge/Lighthouse%20Report-100%25-brightgreen.svg?style=flat)](https://github.com/GoogleChrome/Lighthouse/)
+
 ## Goals
 
 Provide an easy to read `serviceWorker.js` that does the following:
