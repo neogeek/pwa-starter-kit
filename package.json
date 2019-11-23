@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "1.15.0",
-    "eslint": "3.19.0"
+    "@neogeek/eslint-config-standards": "4.2.0",
+    "eslint": "6.7.0"
   }
 }
