@@ -8,7 +8,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://pwa-starter-kit-93cf2.firebaseapp.com/",
+  "start_url": "http://localhost:8000/",
   "background_color": "#FFFFFF",
   "theme_color": "#3E82F7",
   "display": "minimal-ui"
