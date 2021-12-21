@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1">
-<meta name="theme-color" content="#3E82F7">
-<title>Progressive Web Application Starter Kit</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="stylesheet" href="/css/styles.css">
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="theme-color" content="#3E82F7" />
+        <title>Progressive Web Application Starter Kit</title>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
 
-<body>
+    <body>
+        <header>
+            <h1>Progressive Web Application Starter Kit</h1>
+        </header>
 
-<header>
+        <main>
+            <p>
+                Oh hey. You are <span class="connectivity-status">online</span>.
+            </p>
+        </main>
 
-    <h1>Progressive Web Application Starter Kit</h1>
+        <img src="/images/google.png" alt="Google" />
 
-</header>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () =>
+                    navigator.serviceWorker.register('serviceWorker.js')
+                );
+            }
 
-<main>
+            window.addEventListener('online', function () {
+                document.querySelector('.connectivity-status').innerText =
+                    'online';
+            });
 
-    <p>Oh hey. You are <span class="connectivity-status">online</span>.</p>
-
-</main>
-
-<img src="/images/google.png" alt="Google">
-
-<script>
-
-if ('serviceWorker' in navigator) {
-
-    window.addEventListener('load', () =>
-        navigator.serviceWorker.register('serviceWorker.js')
-    );
-
-}
-
-window.addEventListener('online', function () {
-
-    document.querySelector('.connectivity-status').innerText = 'online';
-
-})
-
-window.addEventListener('offline', function () {
-
-    document.querySelector('.connectivity-status').innerText = 'offline';
-
-});
-
-</script>
-
-</body>
+            window.addEventListener('offline', function () {
+                document.querySelector('.connectivity-status').innerText =
+                    'offline';
+            });
+        </script>
+    </body>
 </html>
