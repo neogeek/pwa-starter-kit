@@ -16,13 +16,18 @@
 
         <main>
             <p>
-                Oh hey. You are <span class="connectivity-status">online</span>.
+                Oh hey. You are
+                <span class="connectivity-status online">online</span>.
             </p>
         </main>
 
         <img src="/images/google.png" alt="Google" />
 
         <script>
+            const connectivityStatus = document.querySelector(
+                '.connectivity-status'
+            );
+
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () =>
                     navigator.serviceWorker.register('serviceWorker.js')
@@ -30,13 +35,15 @@
             }
 
             window.addEventListener('online', function () {
-                document.querySelector('.connectivity-status').innerText =
-                    'online';
+                connectivityStatus.classList.add('online');
+                connectivityStatus.classList.remove('offline');
+                connectivityStatus.innerText = 'online';
             });
 
             window.addEventListener('offline', function () {
-                document.querySelector('.connectivity-status').innerText =
-                    'offline';
+                connectivityStatus.classList.add('offline');
+                connectivityStatus.classList.remove('online');
+                connectivityStatus.innerText = 'offline';
             });
         </script>
     </body>

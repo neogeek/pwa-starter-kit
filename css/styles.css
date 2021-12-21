@@ -40,3 +40,11 @@ a {
 .connectivity-status {
     font-weight: 600;
 }
+
+.connectivity-status.online {
+    color: green;
+}
+
+.connectivity-status.offline {
+    color: red;
+}
