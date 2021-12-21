@@ -1,9 +1,7 @@
 {
-  "license": "MIT",
+  "name": "pwa-starter-kit",
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "4.2.0",
-    "eslint": "6.7.2",
-    "prettier": "1.19.1",
-    "prettier-eslint": "9.0.1"
-  }
+    "eslint": "8.5.0"
+  },
+  "private": true
 }

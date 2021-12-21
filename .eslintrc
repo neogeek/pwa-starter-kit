@@ -1,9 +1,10 @@
 {
-  "extends": [
-    "@neogeek/eslint-config-standards"
-  ],
-  "rules": {
-    "no-console": 0,
-    "no-shadow": 0
-  }
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "extends": ["eslint:recommended"]
 }
